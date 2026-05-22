@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  Pokémon Explorer
+</mat-toolbar>
+
+<div class="container">
+
+  <div class="grid">
+
+ @for (pokemon of pokemonList(); track pokemon.name) {
+
+  <mat-card class="pokemon-card">
+
+   
+
+    <mat-card-title>
+      {{ pokemon.name }}
+    </mat-card-title>
+
+  </mat-card>
+
+}
+
+  </div>
+
+</div>
