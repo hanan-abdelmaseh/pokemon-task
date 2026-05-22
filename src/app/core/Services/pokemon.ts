@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { PokemonListResponse } from '../Models/Pokemon.model';
+import { Pokemon, PokemonListResponse } from '../Models/Pokemon.model';
 
 @Injectable({
   providedIn: 'root',
@@ -8,19 +8,16 @@ import { PokemonListResponse } from '../Models/Pokemon.model';
 export class PokemonService {
   private http = inject(HttpClient);
 
-  private baseUrl = 'https://pokeapi.co/api/v2/pokemon';
+  private baseUrl = 'https://pokeapi.co/api/v2';
 
   //get list 
   getPokemonList(limit=20 ,offset =0){
-   return this.http.get<PokemonListResponse>(`${this.baseUrl}?limit=${limit}&offset=${offset}`)
+   return this.http.get<PokemonListResponse>(`${this.baseUrl}/pokemon?limit=${limit}&offset=${offset}`)
   }
   //getPokemonDetail
-  getPokemonDetail(name:string){
-     `${this.baseUrl}/${name}`
+  getPokemonDetail(name:string |null ){
+    return this.http.get<Pokemon>(`${this.baseUrl}/pokemon/${name}`)
   }
-  getPokemonById(id: number) {
-  return this.http.get<any>(
-    `${this.baseUrl}/${id}`
-  );
-}
+
+
 }

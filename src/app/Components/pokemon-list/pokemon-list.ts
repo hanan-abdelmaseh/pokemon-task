@@ -5,10 +5,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-pokemon-list',
-  imports: [CommonModule,MatCardModule,MatButtonModule,MatToolbarModule,RouterModule],
+  imports: [CommonModule,MatCardModule,MatButtonModule,MatToolbarModule,RouterModule,RouterLink],
   templateUrl: './pokemon-list.html',
   styleUrl: './pokemon-list.css',
 })

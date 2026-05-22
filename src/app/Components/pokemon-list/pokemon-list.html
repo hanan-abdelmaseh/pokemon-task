@@ -8,7 +8,7 @@
 
  @for (pokemon of pokemonList(); track pokemon.name) {
 
-  <mat-card class="pokemon-card">
+  <mat-card class="pokemon-card"  [routerLink]="['/pokemon', pokemon.name]">
 
    
 
