@@ -45,20 +45,12 @@
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s ease;
-}
-
-.primary-btn {
   background-color: #facc15;
   color: #111827;
 }
 
 .primary-btn:hover {
   transform: translateY(-3px);
-}
-
-.secondary-btn {
-  border: 2px solid #facc15;
-  color: white;
 }
 
 .hero-image {
@@ -86,4 +78,3 @@
     transform: translateY(0px);
   }
 }
-
