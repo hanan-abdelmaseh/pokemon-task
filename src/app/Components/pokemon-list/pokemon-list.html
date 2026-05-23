@@ -2,52 +2,35 @@
   <div class="row">
     <div class="col-md-9 m-auto">
       <h2 class="text-center">
-      Explore All Pokémon
-    </h2>
-
-    <p class="text-center">
-      Browse through a huge collection of Pokémon and discover
-      their unique types, abilities, stats, and powers.
-      Use the search feature to quickly find your favorite Pokémon
-      and view detailed information about each one.
-    </p>
+        Explore All Pokémon
+      </h2>
+      <p class="text-center">
+        Browse through a huge collection of Pokémon and discover
+        their unique types, abilities, stats, and powers.
+        Use the search feature to quickly find your favorite Pokémon
+        and view detailed information about each one.
+      </p>
     </div>
   </div>
 </div>
- <app-search
-  (search)="onSearchHandler($event)"
-></app-search>
-<!--handle filter by type in next -->
-
+<app-search (search)="onSearchHandler($event)"></app-search>
 <div class="container">
   <div class="grid">
-
- @for (pokemon of filteredList(); track pokemon.name ;let i = $index) {
-
-  <mat-card class="pokemon-card"  [routerLink]="['/pokemon', pokemon.name]">
-
-     <img
-      mat-card-image
-      [src]="pokemon.image"
-    />
-
-    <mat-card-title>
-      {{ pokemon.name }}
-    </mat-card-title>
-     <div class="types">
-          @for (type of pokemon.types; track type) {
-            <span class="type-item">
-              {{ type }}
-            </span>
-
-          }
-
-        </div>
-  </mat-card>
-
-}
-
+    @for (pokemon of filteredList(); track pokemon.name ;let i = $index) {
+    <mat-card class="pokemon-card" [routerLink]="['/pokemon', pokemon.name]">
+      <img mat-card-image [src]="pokemon.image" />
+      <mat-card-title>
+        {{ pokemon.name }}
+      </mat-card-title>
+      <div class="types">
+        @for (type of pokemon.types; track type) {
+        <span class="type-item">
+          {{ type }}
+        </span>
+        }
+      </div>
+    </mat-card>
+    }
   </div>
 
 </div>
-

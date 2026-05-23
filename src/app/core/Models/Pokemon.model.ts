@@ -43,14 +43,11 @@ export interface Pokemon {
 
 export interface Type {
   slot: number
-  type: Type2
-}
-
-export interface Type2 {
+  type:{
   name: string
   url: string
 }
-
+}
 export interface Sprites {
   back_default: string
   back_female: string

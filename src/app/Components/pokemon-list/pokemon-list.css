@@ -32,14 +32,5 @@
   margin:10px
 }
 
-.intro-content {
-  position: relative;
-  z-index: 2;
-}.list-intro {
-  padding: 3rem 2rem;
-  border-radius: 24px;
 
-  position: relative;
-  overflow: hidden;
-}
 

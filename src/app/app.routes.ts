@@ -5,7 +5,7 @@ import { Home } from './Shared/home/home';
 
 export const routes: Routes = [ 
  {
-    path: '',
+    path: 'home',
     component: Home
   },
 
@@ -20,7 +20,8 @@ export const routes: Routes = [
 
    {
     path: '**',
-    redirectTo: 'home' , pathMatch:'full'
+    redirectTo: 'home',
+    pathMatch:'full'
   }
 
 ]
