@@ -8,6 +8,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { PokemonCard } from '../../core/Models/Pokemon.model';
 import { SearchComponent } from '../../Shared/search/search';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { errorContext } from 'rxjs/internal/util/errorContext';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -29,9 +30,13 @@ export class PokemonList {
   }
 
   getPokemonList() {
-    this.PokemonService.getPokemonList().subscribe(res => {
-      console.log(res)
+    this.PokemonService.getPokemonList().subscribe({
+      next:(res)=>{
+ console.log(res)
       this.pokemonList.set(res);
+      },
+      error:(err)=>console.log(err)
+      
     });
   }
   onSearchHandler(name: string) {
