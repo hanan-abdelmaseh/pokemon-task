@@ -9,6 +9,12 @@ export interface PokemonListItem {
   name: string;
   url: string;
 }
+export interface PokemonCard {
+  id: number;
+  name: string;
+  image: string;
+  types: string[];
+}
 export interface Pokemon {
   id: number;
   name: string;

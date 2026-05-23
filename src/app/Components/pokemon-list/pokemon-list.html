@@ -6,16 +6,27 @@
 
   <div class="grid">
 
- @for (pokemon of pokemonList(); track pokemon.name) {
+ @for (pokemon of pokemonList(); track pokemon.name ;let i = $index) {
 
   <mat-card class="pokemon-card"  [routerLink]="['/pokemon', pokemon.name]">
 
-   
+     <img
+      mat-card-image
+      [src]="pokemon.image"
+    />
 
     <mat-card-title>
       {{ pokemon.name }}
     </mat-card-title>
+     <div class="types">
+          @for (type of pokemon.types; track type) {
+            <span class="type-item">
+              {{ type }}
+            </span>
 
+          }
+
+        </div>
   </mat-card>
 
 }

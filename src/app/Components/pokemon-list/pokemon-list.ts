@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
+import { PokemonCard } from '../../core/Models/Pokemon.model';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -16,7 +17,7 @@ import { RouterLink, RouterModule } from '@angular/router';
 export class PokemonList {
   private PokemonService = inject(PokemonService);
 
-  pokemonList = signal<any[]>([]);
+  pokemonList = signal<PokemonCard[]>([]);
   ngOnInit() {
     this.getPokemonList();
   }
@@ -24,7 +25,13 @@ export class PokemonList {
   getPokemonList() {
     this.PokemonService.getPokemonList().subscribe(res => {
       console.log(res)
-      this.pokemonList.set(res.results);
+      this.pokemonList.set(res);
     });
   }
+  //implement image 
+//   getImageForPokemon(id:number): string {
+//  //return  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+//  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+
+//   }
 }
