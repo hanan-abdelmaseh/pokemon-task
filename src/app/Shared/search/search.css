@@ -1,0 +1,10 @@
+.search-container {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 300px;
+}

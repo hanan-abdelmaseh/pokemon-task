@@ -1,0 +1,26 @@
+<div class="search-container">
+
+  <mat-form-field appearance="outline">
+
+    <mat-label>
+      Search Pokemon
+    </mat-label>
+
+    <input
+      matInput
+      [(ngModel)]="searchValue"
+      placeholder="Enter Name"
+      (keypress)="onSearch()"
+    />
+
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onSearch()"
+  >
+    Search
+  </button>
+
+</div>
