@@ -19,15 +19,9 @@ export interface Pokemon {
   id: number;
   name: string;
 
-  sprites: {
-    front_default: string;
-  };
+   sprites: Sprites;
 
-  types: {
-    type: {
-      name: string;
-    };
-  }[];
+  types: Type[];
 
   abilities: {
     ability: {
@@ -44,4 +38,45 @@ export interface Pokemon {
 
   height: number;
   weight: number;
+}
+
+
+export interface Type {
+  slot: number
+  type: Type2
+}
+
+export interface Type2 {
+  name: string
+  url: string
+}
+
+export interface Sprites {
+  back_default: string
+  back_female: string
+  back_shiny: string
+  back_shiny_female: string
+  front_default: string
+  front_female: string
+  front_shiny: string
+  front_shiny_female: string
+  other: Other
+ 
+}
+
+export interface Other {
+  dream_world: {
+  front_default: string
+  front_female: any
+}
+  home: {
+  front_default: string
+  front_female: string
+  front_shiny: string
+  front_shiny_female: string
+}
+  "official-artwork": {
+  front_default: string
+  front_shiny: string
+}
 }

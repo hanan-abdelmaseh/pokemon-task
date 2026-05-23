@@ -1,0 +1,64 @@
+.back{
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: red;
+    border: none;
+    color: aqua;
+    text-align: center;
+}
+
+.details-card {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 16px;
+}
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.type-item {
+  display: inline-block;
+  margin: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #eee;
+}
+.progress-bar{
+    margin-bottom: 10px;
+      height: 8px;
+  border-radius: 10px;
+}
+.stats-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.stat-row {
+  margin-bottom: 14px;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.stat-name {
+  font-weight: 600;
+}
+

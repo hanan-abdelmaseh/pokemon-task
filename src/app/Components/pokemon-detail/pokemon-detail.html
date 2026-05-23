@@ -1,1 +1,39 @@
-<p>pokemon-detail works!</p>
+
+<button class="back"> &#9664; </button>
+
+@if (pokemonItem()) {
+ <mat-card class="details-card">
+  <div class="image-container">
+ 
+
+     <img class="image"
+     
+      [src]="pokemonItem()?.sprites?.other?.['official-artwork']?.front_default
+"
+    />
+</div>
+    <mat-card-title>
+      {{ pokemonItem()?.name }}
+    </mat-card-title>
+     <div class="types">
+          @for (type of pokemonItem()?.types; track type) {
+            <span class="type-item">
+              {{ type.type.name }}
+            </span>
+
+          }
+
+        </div>
+        <div class="state">
+@for (state of pokemonItem()?.stats; track $index) {
+     <div class="stat-header">
+      <span class="stat-name">{{ state.stat.name |uppercase }}</span>
+      <span class="stat-value">{{ state.base_stat }}</span>
+    </div>
+        <mat-progress-bar class="progress-bar" mode="determinate" [value]="state.base_stat"></mat-progress-bar>
+}
+        </div>
+
+  </mat-card>
+ }
+
