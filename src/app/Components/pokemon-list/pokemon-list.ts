@@ -9,11 +9,12 @@ import { RouterLink, RouterModule } from '@angular/router';
 import { PokemonCard } from '../../core/Models/Pokemon.model';
 import { SearchComponent } from '../../Shared/search/search';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { Home } from "../../Shared/home/home";
 
 @Component({
   selector: 'app-pokemon-list',
-  imports: [CommonModule,MatCardModule,MatButtonModule,
-    MatToolbarModule,RouterModule,RouterLink,SearchComponent, MatPaginatorModule],
+  imports: [CommonModule, MatCardModule, MatButtonModule,
+    MatToolbarModule, RouterModule, RouterLink, SearchComponent, MatPaginatorModule],
   templateUrl: './pokemon-list.html',
   styleUrl: './pokemon-list.css',
 })

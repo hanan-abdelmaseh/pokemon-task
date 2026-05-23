@@ -1,14 +1,25 @@
-<mat-toolbar color="primary">
-  Pokémon Explorer
-</mat-toolbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 m-auto">
+      <h2 class="text-center">
+      Explore All Pokémon
+    </h2>
+
+    <p class="text-center">
+      Browse through a huge collection of Pokémon and discover
+      their unique types, abilities, stats, and powers.
+      Use the search feature to quickly find your favorite Pokémon
+      and view detailed information about each one.
+    </p>
+    </div>
+  </div>
+</div>
  <app-search
   (search)="onSearchHandler($event)"
 ></app-search>
 <!--handle filter by type in next -->
-<!--handle pagination-->
 
 <div class="container">
-
   <div class="grid">
 
  @for (pokemon of filteredList(); track pokemon.name ;let i = $index) {
@@ -40,9 +51,3 @@
 
 </div>
 
-
-<mat-paginator [length]="filteredList().length"
-              [pageSize]="10"
-              [pageSizeOptions]="[5, 10, 25, 100]"
-              aria-label="Select page">
-</mat-paginator>

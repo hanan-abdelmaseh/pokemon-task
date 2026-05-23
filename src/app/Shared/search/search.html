@@ -1,26 +1,25 @@
-<div class="search-container">
+<div class="search-section container mb-4">
 
-  <mat-form-field appearance="outline">
+  <div class="search-wrapper">
 
-    <mat-label>
-      Search Pokemon
-    </mat-label>
+    <mat-form-field
+      appearance="outline"
+      class="w-100">
 
-    <input
-      matInput
-      [(ngModel)]="searchValue"
-      placeholder="Enter Name"
-      (keypress)="onSearch()"
-    />
+      <mat-label>
+        Search Pokémon
+      </mat-label>
 
-  </mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Search by name..."
+        [(ngModel)]="searchValue"
+        (input)="onSearch()"
+      />
 
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="onSearch()"
-  >
-    Search
-  </button>
+    </mat-form-field>
+
+  </div>
 
 </div>

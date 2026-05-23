@@ -1,6 +1,4 @@
-
-<button class="back"> &#9664; </button>
-
+<app-breadcrumb></app-breadcrumb>
 @if (pokemonItem()) {
  <mat-card class="details-card">
   <div class="image-container">
@@ -12,10 +10,11 @@
 "
     />
 </div>
-    <mat-card-title>
-      {{ pokemonItem()?.name }}
+    <mat-card-title class="text-center">
+      {{ pokemonItem()?.name |uppercase }}
     </mat-card-title>
      <div class="types">
+     <h3>Types</h3>
           @for (type of pokemonItem()?.types; track type) {
             <span class="type-item">
               {{ type.type.name }}
@@ -24,7 +23,18 @@
           }
 
         </div>
+          <div class="types">
+     <h3>Abilities</h3>
+          @for (ability of pokemonItem()?.abilities;track  ability) {
+            <span class="type-item">
+              {{ ability.ability.name }}
+            </span>
+
+          }
+
+        </div>
         <div class="state">
+              <h3>Stats</h3>
 @for (state of pokemonItem()?.stats; track $index) {
      <div class="stat-header">
       <span class="stat-name">{{ state.stat.name |uppercase }}</span>
@@ -33,7 +43,17 @@
         <mat-progress-bar class="progress-bar" mode="determinate" [value]="state.base_stat"></mat-progress-bar>
 }
         </div>
+   <div class="extra-info type-item">
+               <span class="info">Height</span>
+               <span > {{pokemonItem()?.height }}</span>
+      </div>
+      <div class="extra-info type-item">
+               <span class="info">Weight</span>
+               <span > {{pokemonItem()?.weight }}</span>
+      </div>
+            
+
+
 
   </mat-card>
  }
-

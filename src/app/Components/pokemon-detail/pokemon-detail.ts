@@ -1,15 +1,17 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { PokemonService } from '../../core/Services/pokemon';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Pokemon } from '../../core/Models/Pokemon.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { CommonModule } from '@angular/common';
+import { Breadcrumb } from "../../Shared/breadcrumb/breadcrumb";
 
 @Component({
   selector: 'app-pokemon-detail',
-  imports: [MatCardModule,MatButtonModule,MatProgressBarModule , CommonModule  ],
+  imports: [MatCardModule,
+    MatButtonModule, MatProgressBarModule, CommonModule, Breadcrumb],
   templateUrl: './pokemon-detail.html',
   styleUrl: './pokemon-detail.css',
 })

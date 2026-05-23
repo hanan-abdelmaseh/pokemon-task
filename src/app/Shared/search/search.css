@@ -1,10 +1,8 @@
-.search-container {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
-  align-items: center;
+.search-wrapper {
+  max-width: 700px;
+  margin-inline: auto;
 }
 
 mat-form-field {
-  width: 300px;
+  width: 100%;
 }

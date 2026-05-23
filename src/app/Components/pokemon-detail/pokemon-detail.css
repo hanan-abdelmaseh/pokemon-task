@@ -1,17 +1,8 @@
-.back{
-    border-radius: 50%;
-    font-size: 20px;
-    background-color: red;
-    border: none;
-    color: aqua;
-    text-align: center;
-}
 
 .details-card {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 20px auto ;
   padding: 20px;
-  text-align: center;
   border-radius: 16px;
 }
 .image-container {
@@ -50,15 +41,16 @@
   margin-bottom: 14px;
 }
 
-.stat-header {
+.stat-header , .extra-info{
   display: flex;
   justify-content: space-between;
   font-size: 12px;
   margin-bottom: 4px;
   color: #333;
+   
 }
 
-.stat-name {
+.stat-name ,.info {
   font-weight: 600;
 }
 
