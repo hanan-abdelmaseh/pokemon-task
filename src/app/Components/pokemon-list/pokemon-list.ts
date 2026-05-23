@@ -22,6 +22,8 @@ export class PokemonList {
   pokemonList = signal<PokemonCard[]>([]);
 
   searchValue = signal('');
+  pageSize = signal(20);
+  pageIndex = signal(0);
   ngOnInit() {
     this.getPokemonList();
   }
@@ -32,12 +34,27 @@ export class PokemonList {
       this.pokemonList.set(res);
     });
   }
-onSearchHandler(name:string){
-  this.searchValue.set(name)
-}
-// filtered list 
-filteredList = computed(()=>{
-  return this.pokemonList().filter((item)=>item.name.includes(this.searchValue().toLowerCase()))
-})
+  onSearchHandler(name: string) {
+    this.searchValue.set(name);
+    this.pageIndex.set(0);
+  }
+  // filtered list 
+  filteredList = computed(() => {
+    return this.pokemonList().filter((item) => item.name.includes(this.searchValue().toLowerCase()))
+  })
 
+  resetFilters(): void {
+    this.searchValue.set('');
+  }
+  paginatedPokemon = computed(() => {
+
+    const start = this.pageIndex() * this.pageSize();
+    const end = start + this.pageSize();
+
+    return this.filteredList().slice(start, end);
+  });
+  onPageChange(event: any): void {
+    this.pageIndex.set(event.pageIndex);
+    this.pageSize.set(event.pageSize);
+  }
 }

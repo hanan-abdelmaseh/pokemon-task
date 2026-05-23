@@ -11,9 +11,9 @@ export class PokemonService {
 
   private baseUrl = 'https://pokeapi.co/api/v2';
 
-  //get list 
+  //get list of 100 item only 
   //get specific details for card 
-  getPokemonList(limit = 21,offset = 0) {
+  getPokemonList(limit = 100,offset = 0) {
     return this.http.get<PokemonListResponse>(`${this.baseUrl}/pokemon?limit=${limit}&offset=${offset}`)
       .pipe(
         switchMap(response => {

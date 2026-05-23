@@ -14,9 +14,10 @@
   </div>
 </div>
 <app-search (search)="onSearchHandler($event)"></app-search>
+@if(paginatedPokemon().length >0){
 <div class="container">
   <div class="grid">
-    @for (pokemon of filteredList(); track pokemon.name ;let i = $index) {
+    @for (pokemon of paginatedPokemon(); track pokemon.name ;let i = $index) {
     <mat-card class="pokemon-card" [routerLink]="['/pokemon', pokemon.name]">
       <img mat-card-image [src]="pokemon.image" />
       <mat-card-title>
@@ -34,3 +35,25 @@
   </div>
 
 </div>
+} @else {
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 m-auto text-center">
+      <h3>No Pokémon Found</h3>
+
+      <p>
+        Try changing your search
+      </p>
+
+      <button class="btn btn-warning mt-2" (click)="resetFilters()">
+        Reset Filters
+      </button>
+
+    </div>
+  </div>
+</div>
+}
+
+<mat-paginator [length]="filteredList().length" [pageSize]="pageSize()" [pageIndex]="pageIndex()"
+  [pageSizeOptions]="[10, 20, 50]" (page)="onPageChange($event)">
+</mat-paginator>
