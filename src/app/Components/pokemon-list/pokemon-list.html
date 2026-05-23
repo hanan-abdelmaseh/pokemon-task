@@ -1,12 +1,17 @@
 <mat-toolbar color="primary">
   Pokémon Explorer
 </mat-toolbar>
+ <app-search
+  (search)="onSearchHandler($event)"
+></app-search>
+<!--handle filter by type in next -->
+<!--handle pagination-->
 
 <div class="container">
 
   <div class="grid">
 
- @for (pokemon of pokemonList(); track pokemon.name ;let i = $index) {
+ @for (pokemon of filteredList(); track pokemon.name ;let i = $index) {
 
   <mat-card class="pokemon-card"  [routerLink]="['/pokemon', pokemon.name]">
 
