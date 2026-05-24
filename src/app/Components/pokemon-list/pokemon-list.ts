@@ -32,7 +32,7 @@ export class PokemonList {
   getPokemonList() {
     this.PokemonService.getPokemonList().subscribe({
       next:(res)=>{
- console.log(res)
+      console.log(res)
       this.pokemonList.set(res);
       },
       error:(err)=>console.log(err)
