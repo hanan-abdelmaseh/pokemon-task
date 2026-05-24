@@ -14,10 +14,7 @@ Angular Material
 RxJS
 Signals
 PokéAPI
-# extra information :
-node version : v20.20.2
-Angular CLI version : 20.3.26
-#strecture :
+# Strecture :
 Src
   components
     - List
@@ -31,3 +28,7 @@ Src
     - Navbar
     - Footer
     - Home
+
+# extra information :
+node version : v20.20.2
+Angular CLI version : 20.3.26
