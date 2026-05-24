@@ -28,7 +28,6 @@ export class PokemonDetail implements OnInit {
   getPokemonDetails(){
     this.pokemonService.getPokemonDetail(this.pokemonName).subscribe((res)=>
     {
-      console.log(res)
       this.pokemonItem.set(res)
     });
   }
